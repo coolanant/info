@@ -7,7 +7,7 @@ In CMD in root folder
 1. npm i
 2. npm start
 
-3. (optional) If error comes Try adding this extension for **redux** -https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
+3. Add this extension in your chrome browser for running locally **redux** -https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
    or go to the previous code implemntation without redux - https://github.com/coolanant/info/tree/4deeb89d600808f0cbcef36e4620f553b1d0f411
 
 ## Flow of App
