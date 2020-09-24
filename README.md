@@ -3,6 +3,7 @@
 ## Steps To Run
 
 In CMD in root folder
+
 1. npm i
 2. npm start
 
@@ -33,3 +34,5 @@ In CMD in root folder
 2. I have professional experience with Redux, Angular(few years back, will need revision) and many other things
 
 3. My Linkedin - https://linkedin.com/in/anant016
+
+4. My Resume - https://bit.ly/anant007
