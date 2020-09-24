@@ -23,7 +23,6 @@ const Register = () => {
 
   // if already logged in send to dashboard
   var provider = new firebase.auth.FacebookAuthProvider();
-  // provider.addScope("user_birthday");
   var Gprovider = new firebase.auth.GoogleAuthProvider();
   const facebookReg = () => {
     firebase
@@ -40,7 +39,7 @@ const Register = () => {
         console.log(user);
         localStorage.setItem("token", token);
         console.log(user.user.displayName);
-        localStorage.setItem("user", user.displayName);
+        localStorage.setItem("user", user.user.displayName);
         history.push("/dashboard", user);
         // ...
       })

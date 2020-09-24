@@ -12,7 +12,6 @@ In CMD in root folder
 1. If already logged in, send to dashboard
 2. If not logged in send to register
 3. Login via Google and Facebook Done
-   (Try the Google one first as it is working flawlessly, Facebook Oauth may give some problem, I did whitelisting the domain but has an issue still persist)
 4. Register via fields (using reqres.in) done
 5. Login via reqres.in done
 6. On dashboard you can logout
