@@ -38,7 +38,7 @@ const Login = () => {
         console.log(token);
         console.log(user);
         localStorage.setItem("token", token);
-        console.log(user.user.displayName);
+        console.log(user.displayName);
         localStorage.setItem("user", user.displayName);
         history.push("/dashboard", user);
         // ...
@@ -48,6 +48,7 @@ const Login = () => {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
+        alert(errorMessage);
         // The email of the user's account used.
         var email = error.email;
         // The firebase.auth.AuthCredential type that was used.
@@ -79,6 +80,7 @@ const Login = () => {
         var errorCode = error.code;
         var errorMessage = error.message;
         // The email of the user's account used.
+        alert(errorMessage);
         var email = error.email;
         // The firebase.auth.AuthCredential type that was used.
         var credential = error.credential;
