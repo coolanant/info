@@ -3,7 +3,6 @@ import * as firebase from "firebase";
 
 export const loginUserF = (history) => async (dispatch) => {
   var provider = new firebase.auth.FacebookAuthProvider();
-  provider.addScope("user_birthday");
 
   firebase
     .auth()
