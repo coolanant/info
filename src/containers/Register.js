@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Logo from "../assets/logo.jpg";
 import Google from "../assets/google.png";
 import Facebook from "../assets/facebook.png";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams, Link } from "react-router-dom";
 import * as firebase from "firebase";
 import axios from "axios";
 
@@ -11,8 +11,15 @@ const Register = () => {
   const history = useHistory();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+
+  useEffect(() => {
+    if (localStorage.getItem("token") != null) {
+      history.push("/dashboard");
+    }
+    // if logged in send to dashboard
+  });
 
   // if already logged in send to dashboard
   var provider = new firebase.auth.FacebookAuthProvider();
@@ -82,10 +89,16 @@ const Register = () => {
   const register = async () => {
     const user = {
       email: email,
-      passoword: password,
+      password: password,
     };
-    var res = await axios.post("/https://reqres.in/api/regiser", user);
-    console.log(res);
+    try {
+      var res = await axios.post("https://reqres.in/api/regiser", user);
+      alert("Registered with id :" + res.data.id);
+      history.push("/login");
+    } catch (err) {
+      console.log(err);
+      console.log(err.response);
+    }
     // history.push("/login");
   };
   return (
@@ -138,6 +151,10 @@ const Register = () => {
               placeholder="Password"
             />
             <PrimaryButton onClick={register}>Sign Up</PrimaryButton>
+            <Text>
+              {" "}
+              Already Registered? <Link to="/login">SignIn</Link>
+            </Text>
           </Row>
         </Card>
       </center>

@@ -10,10 +10,15 @@ In CMD in root
 1. If already logged in, send to dashboard
 2. If not logged in send to register
 3. Login via Google and Facebook Working
+4. Register via fields (using reqres.in) done
+5. Login via reqres.in done
+6. On dashboard you can logout
 
 # Future Scope
 
 1. Add Redux - to improve state management & user data flows
+2. Do Form Validation
+3. And Improve Error Handling
 
 # Additional Commnets
 
