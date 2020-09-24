@@ -11,11 +11,15 @@ In CMD in root
 
 1. If already logged in, send to dashboard
 2. If not logged in send to register
-3. Login via Google and Facebook Done (Facebook Oauth may give some problem in SPA's, This can easily be solved using integrating with a backend/server)
+3. Login via Google and Facebook Done (Facebook Oauth may give some problem, This can easily be solved using integrating with a backend/server)
 4. Register via fields (using reqres.in) done
 5. Login via reqres.in done
 6. On dashboard you can logout
 7. I have use styled-components for styling, I just love it. For smaller applications I just use bootstrap
+
+# For Extra Points
+
+1. Deployed on [Netlify - https://stoic-golick-1d5f6d.netlify.app/](https://stoic-golick-1d5f6d.netlify.app/)
 
 # Future Scope
 
