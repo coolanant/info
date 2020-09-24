@@ -27,11 +27,11 @@ In CMD in root folder
 2. Do Form Validation
 3. And Improve Error Handling
 
-### Redux Code on branch -`feat/redux` (On master branch we dont't have redux for simplicity)
+### Redux Implemented on branch -`feat/redux` (On master branch we dont't have redux for simplicity)
 
 If you are running the code for feat/redux, try adding this extension for development only - https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
 
-- I've written some code for redux,
+- I've written login functions code on redux,
 - We can implement errors and other things similarly
 - and onRefresh as it goes, once we use our own JWT token, we can decode and manage redux seperately for that.
 
