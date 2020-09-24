@@ -7,6 +7,9 @@ In CMD in root folder
 1. npm i
 2. npm start
 
+3. (optional) If error comes Try adding this extension for **redux** -https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
+   or go to the previous code implemntation without redux - https://github.com/coolanant/info/tree/4deeb89d600808f0cbcef36e4620f553b1d0f411
+
 ## Flow of App
 
 1. If already logged in, send to dashboard
@@ -23,15 +26,12 @@ In CMD in root folder
 
 ## Future Scope
 
-1. Add Redux - to improve state management & user data flows
-2. Do Form Validation
-3. And Improve Error Handling
+1. Do Form Validation
+2. And Improve Error Handling
+3. More code-splitting into api-handler (making all api's call there)
+4. Redux
 
-### Redux Implemented on branch -`feat/redux` (On master branch we dont't have redux for simplicity)
-
-If you are running the code for feat/redux, try adding this extension for development only - https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
-
-- I've written login functions code on redux,
+- I've written functions for google signin and facebook signin on redux,
 - We can implement errors and other things similarly
 - and onRefresh as it goes, once we use our own JWT token, we can decode and manage redux seperately for that.
 
