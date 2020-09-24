@@ -7,17 +7,20 @@ import { useHistory, useParams } from "react-router-dom";
 const Dashboard = () => {
   const user = localStorage.getItem("user");
   const history = useHistory();
+  // Form input values
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   useEffect(() => {
+    // if not logged in send to register
     if (localStorage.getItem("token") == null) {
       history.push("/register");
     }
-    // if not logged in send to register
   });
+
+  // Logout User
   const logoutUser = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("token");
@@ -37,6 +40,8 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+// Styled Components
 const Nav = styled.div`
   text-align: center;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.19);

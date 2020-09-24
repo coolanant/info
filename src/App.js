@@ -1,8 +1,9 @@
 import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+// Components
 import Register from "./containers/Register";
 import Dashboard from "./containers/Dashboard";
 import Login from "./containers/Login";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // Redux
 import store from "./redux/store";
@@ -13,7 +14,7 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 
-// Your web app's Firebase configuration
+// Web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyDNCPmlEgmTiUStEFLE4GmbEbz6EeCksCU",
   authDomain: "bobble-4c4f2.firebaseapp.com",

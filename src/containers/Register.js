@@ -11,6 +11,7 @@ import { connect, useDispatch, useSelector } from "react-redux";
 
 const Register = ({ loginUserF, loginUserG, isAuthenticated }) => {
   const history = useHistory();
+  // Form Input values
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState(null);
@@ -23,13 +24,17 @@ const Register = ({ loginUserF, loginUserG, isAuthenticated }) => {
     }
   });
 
+  // Facebbok Login
   const facebookReg = () => {
     loginUserF(history);
   };
 
+  // Google Login
   const googleReg = () => {
     loginUserG(history);
   };
+
+  // register using reqres.in
   const register = async () => {
     const user = {
       email: email,
@@ -44,8 +49,8 @@ const Register = ({ loginUserF, loginUserG, isAuthenticated }) => {
       console.log(err.response);
       alert(err.response.data.error);
     }
-    // history.push("/login");
   };
+
   return (
     <div>
       <Nav>
@@ -115,6 +120,7 @@ const mapDispatchToProps = { loginUserF, loginUserG };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register);
 
+// Styled components
 const Input = styled.input`
   width: 100%;
   height: 2em;

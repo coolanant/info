@@ -11,26 +11,30 @@ import { connect, useDispatch, useSelector } from "react-redux";
 
 const Login = ({ loginUserF, loginUserG, isAuthenticated }) => {
   const history = useHistory();
+  // Form Input values
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
 
   useEffect(() => {
+    // if already logged in send to dashboard
     if (localStorage.getItem("token") != null) {
       history.push("/dashboard");
     }
-    // if logged in send to dashboard
   });
 
-  // if already logged in send to dashboard
+  // Facebook Login
   const facebookReg = () => {
     loginUserF(history);
   };
 
+  // Google Login
   const googleReg = () => {
     loginUserG(history);
   };
+
+  // Login User using reqres.in
   const loginUser = async () => {
     const user = {
       email: email,
@@ -46,7 +50,6 @@ const Login = ({ loginUserF, loginUserG, isAuthenticated }) => {
       console.log(err.response);
       alert(err.response.data.error);
     }
-    // history.push("/login");
   };
   return (
     <div>
@@ -108,6 +111,7 @@ const mapDispatchToProps = { loginUserF, loginUserG };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
 
+// Styled Components
 const Input = styled.input`
   width: 100%;
   height: 2em;

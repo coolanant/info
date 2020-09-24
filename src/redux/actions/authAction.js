@@ -1,9 +1,8 @@
-import axios from "axios";
 import * as firebase from "firebase";
 
+// Login User using Facebook Action
 export const loginUserF = (history) => async (dispatch) => {
   var provider = new firebase.auth.FacebookAuthProvider();
-
   firebase
     .auth()
     .signInWithPopup(provider)
@@ -12,18 +11,17 @@ export const loginUserF = (history) => async (dispatch) => {
       var token = result.credential.accessToken;
       // The signed-in user info.
       var user = result.user;
-      console.log(result);
-      console.log(token);
-      console.log(user);
+      // console.log(result);
+      // console.log(token);
+      // console.log(user);
       localStorage.setItem("token", token);
-      console.log(user.displayName);
+      // console.log(user.displayName);
       localStorage.setItem("user", user.displayName);
       dispatch({
         type: "LOGIN_USER",
         payload: user,
       });
       history.push("/dashboard");
-      // ...
     })
     .catch(function (error) {
       console.log(error);
@@ -35,7 +33,6 @@ export const loginUserF = (history) => async (dispatch) => {
       var email = error.email;
       // The firebase.auth.AuthCredential type that was used.
       var credential = error.credential;
-      // ...
       dispatch({
         type: "GET_ERRORS",
         payload: "error",
@@ -43,6 +40,7 @@ export const loginUserF = (history) => async (dispatch) => {
     });
 };
 
+// Login User using Google Action
 export const loginUserG = (history) => async (dispatch) => {
   var Gprovider = new firebase.auth.GoogleAuthProvider();
   firebase
@@ -53,19 +51,16 @@ export const loginUserG = (history) => async (dispatch) => {
       var token = result.credential.accessToken;
       // The signed-in user info.
       var user = result.user;
-      console.log(result);
-      console.log(token);
-      console.log(user.displayName);
+      // console.log(result);
+      // console.log(token);
+      // console.log(user.displayName);
       localStorage.setItem("token", token);
       localStorage.setItem("user", user.displayName);
       dispatch({
         type: "LOGIN_USER",
         payload: user,
       });
-
       history.push("/dashboard");
-
-      // ...
     })
     .catch(function (error) {
       console.log(error);
@@ -77,8 +72,6 @@ export const loginUserG = (history) => async (dispatch) => {
       var email = error.email;
       // The firebase.auth.AuthCredential type that was used.
       var credential = error.credential;
-
-      // ...
       dispatch({
         type: "GET_ERRORS",
         payload: "error",
