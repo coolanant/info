@@ -5,6 +5,8 @@ import Google from "../assets/google.png";
 import Facebook from "../assets/facebook.png";
 import { useHistory, useParams } from "react-router-dom";
 import * as firebase from "firebase";
+import axios from "axios";
+
 const Register = () => {
   const history = useHistory();
   const [firstName, setFirstName] = useState("");
@@ -77,7 +79,13 @@ const Register = () => {
         // ...
       });
   };
-  const register = () => {
+  const register = async () => {
+    const user = {
+      email: email,
+      passoword: password,
+    };
+    var res = await axios.post("/https://reqres.in/api/regiser", user);
+    console.log(res);
     // history.push("/login");
   };
   return (
