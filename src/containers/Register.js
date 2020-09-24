@@ -38,9 +38,9 @@ const Register = () => {
         console.log(token);
         console.log(user);
         localStorage.setItem("token", token);
-        console.log(user.user.displayName);
-        localStorage.setItem("user", user.user.displayName);
-        history.push("/dashboard", user);
+        console.log(user.displayName);
+        localStorage.setItem("user", user.displayName);
+        history.push("/dashboard");
         // ...
       })
       .catch(function (error) {
