@@ -23,7 +23,7 @@ const Register = () => {
 
   // if already logged in send to dashboard
   var provider = new firebase.auth.FacebookAuthProvider();
-  provider.addScope("user_birthday");
+  // provider.addScope("user_birthday");
   var Gprovider = new firebase.auth.GoogleAuthProvider();
   const facebookReg = () => {
     firebase
@@ -34,6 +34,7 @@ const Register = () => {
         var token = result.credential.accessToken;
         // The signed-in user info.
         var user = result.user;
+
         console.log(result);
         console.log(token);
         console.log(user);
