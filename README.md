@@ -1,13 +1,12 @@
-# Steps To Run
-
-In CMD in root
-
 # TASK
 
+## Steps To Run
+
+In CMD in root folder
 1. npm i
 2. npm start
 
-# Flow of App
+## Flow of App
 
 1. If already logged in, send to dashboard
 2. If not logged in send to register
@@ -17,17 +16,17 @@ In CMD in root
 6. On dashboard you can logout
 7. I have use styled-components for styling, I just love it. For smaller applications I just use bootstrap
 
-# For Extra Points
+## For Extra Points
 
 1. Deployed on [Netlify - https://stoic-golick-1d5f6d.netlify.app/](https://stoic-golick-1d5f6d.netlify.app/)
 
-# Future Scope
+## Future Scope
 
 1. Add Redux - to improve state management & user data flows
 2. Do Form Validation
 3. And Improve Error Handling
 
-# Additional Commnets
+## Additional Commnets
 
 1. I'm currently doin an internship with `Indywise` where I'm working on there main project on frontend and there we are using the best practices only. Can't share all details but I'm very passionate, eager to learn and want to use best practices, but due to lack of time, I've made this only working
 
