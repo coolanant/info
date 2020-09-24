@@ -17,7 +17,7 @@ export const loginUserF = (history) => async (dispatch) => {
       console.log(token);
       console.log(user);
       localStorage.setItem("token", token);
-      console.log(user.user.displayName);
+      console.log(user.displayName);
       localStorage.setItem("user", user.displayName);
       dispatch({
         type: "LOGIN_USER",
@@ -31,6 +31,7 @@ export const loginUserF = (history) => async (dispatch) => {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
+      alert(errorMessage);
       // The email of the user's account used.
       var email = error.email;
       // The firebase.auth.AuthCredential type that was used.
@@ -72,6 +73,7 @@ export const loginUserG = (history) => async (dispatch) => {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
+      alert(errorMessage);
       // The email of the user's account used.
       var email = error.email;
       // The firebase.auth.AuthCredential type that was used.

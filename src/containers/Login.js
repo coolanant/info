@@ -6,8 +6,10 @@ import Facebook from "../assets/facebook.png";
 import { useHistory, useParams, Link } from "react-router-dom";
 import * as firebase from "firebase";
 import axios from "axios";
+import { loginUserF, loginUserG } from "../redux/actions/authAction";
+import { connect, useDispatch, useSelector } from "react-redux";
 
-const Login = () => {
+const Login = ({ loginUserF, loginUserG, isAuthenticated }) => {
   const history = useHistory();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -22,69 +24,12 @@ const Login = () => {
   });
 
   // if already logged in send to dashboard
-  var provider = new firebase.auth.FacebookAuthProvider();
-  provider.addScope("user_birthday");
-  var Gprovider = new firebase.auth.GoogleAuthProvider();
   const facebookReg = () => {
-    firebase
-      .auth()
-      .signInWithPopup(provider)
-      .then(function (result) {
-        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-        var token = result.credential.accessToken;
-        // The signed-in user info.
-        var user = result.user;
-        console.log(result);
-        console.log(token);
-        console.log(user);
-        localStorage.setItem("token", token);
-        console.log(user.user.displayName);
-        localStorage.setItem("user", user.displayName);
-        history.push("/dashboard", user);
-        // ...
-      })
-      .catch(function (error) {
-        console.log(error);
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
-      });
+    loginUserF(history);
   };
 
   const googleReg = () => {
-    firebase
-      .auth()
-      .signInWithPopup(Gprovider)
-      .then(function (result) {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = result.credential.accessToken;
-        // The signed-in user info.
-        var user = result.user;
-        console.log(result);
-        console.log(token);
-        console.log(user.displayName);
-        localStorage.setItem("token", token);
-        localStorage.setItem("user", user.displayName);
-        history.push("/dashboard");
-        // ...
-      })
-      .catch(function (error) {
-        console.log(error);
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-
-        // ...
-      });
+    loginUserG(history);
   };
   const loginUser = async () => {
     const user = {
@@ -154,8 +99,14 @@ const Login = () => {
     </div>
   );
 };
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+  errors: state.auth.errors,
+});
 
-export default Login;
+const mapDispatchToProps = { loginUserF, loginUserG };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
 
 const Input = styled.input`
   width: 100%;

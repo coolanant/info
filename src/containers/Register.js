@@ -37,11 +37,12 @@ const Register = ({ loginUserF, loginUserG, isAuthenticated }) => {
     };
     try {
       var res = await axios.post("https://reqres.in/api/regiser", user);
-      alert("Registered with id :" + res.data.id);
+      alert("Registered with id : " + res.data.id);
       history.push("/login");
     } catch (err) {
       console.log(err);
       console.log(err.response);
+      alert(err.response.data.error);
     }
     // history.push("/login");
   };
