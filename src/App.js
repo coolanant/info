@@ -3,9 +3,13 @@ import Register from "./containers/Register";
 import Dashboard from "./containers/Dashboard";
 import Login from "./containers/Login";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import * as firebase from "firebase/app";
+
+// Redux
+import store from "./redux/store";
+import { Provider } from "react-redux";
 
 // Add the Firebase services that you want to use
+import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 
@@ -24,14 +28,16 @@ firebase.initializeApp(firebaseConfig);
 
 function App() {
   return (
-    <div className="App">
+    <Provider store={store}>
       <Router>
-        <Route exact path="/" component={Register} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/dashboard" component={Dashboard} />
+        <div className="App">
+          <Route exact path="/" component={Register} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/dashboard" component={Dashboard} />
+        </div>
       </Router>
-    </div>
+    </Provider>
   );
 }
 

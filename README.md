@@ -11,7 +11,8 @@ In CMD in root folder
 
 1. If already logged in, send to dashboard
 2. If not logged in send to register
-3. Login via Google and Facebook Done (Facebook Oauth may give some problem, This can easily be solved using integrating with a backend/server)
+3. Login via Google and Facebook Done
+   (Try the Google one first as it is working flawlessly, Facebook Oauth may give some problem, I tried whitelisting.)
 4. Register via fields (using reqres.in) done
 5. Login via reqres.in done
 6. On dashboard you can logout
@@ -27,7 +28,15 @@ In CMD in root folder
 2. Do Form Validation
 3. And Improve Error Handling
 
-## Additional Commnets
+### Redux Code on branch -`feat/redux`
+
+If you are running the code for feat/redux, try adding this extension for development only - https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
+
+- I've written some code for redux,
+- We can implement errors and other things similarly
+- and onRefresh as it goes, once we use our own JWT token, we can decode and manage redux seperately for that.
+
+## Additional Comments
 
 1. I'm currently doin an internship with `Indywise` where I'm working on there main project on frontend and there we are using the best practices only. Can't share all details but I'm very passionate, eager to learn and want to use best practices, but due to lack of time, I've made this only working
 
